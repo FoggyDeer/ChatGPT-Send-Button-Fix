@@ -1,0 +1,19 @@
+{
+    "name": "ChatGPT Send Button Fix",
+    "description": "A fix for the pocket version of ChatGPT that makes the 'Enter' button available for sending messages.",
+    "version": "0.1.0",
+    "manifest_version": 3,
+    "content_scripts": [{
+        "matches": ["https://chatgpt.com/*"],
+        "run_at": "document_start",
+        "js": ["js/content-script.js"]
+    }],
+    "icons": {
+        "16": "img/icon_16x16.png",
+        "48": "img/icon_48x48.png",
+        "128": "img/icon_128x128.png"
+    },
+    "host_permissions": [
+        "https://chatgpt.com/*"                      
+    ]
+}
