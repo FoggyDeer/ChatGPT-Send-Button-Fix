@@ -4,7 +4,7 @@ This Privacy Policy describes the types of information we may collect when you u
 
 ### Collection and Use of Information
 
-We do not collect, store, or transmit any user data. Our Chrome extension only tracks button presses of Enter and Shift on the website chatgpt.com and does not retain any user information.
+We do not collect, store, or transmit any user data. Our Chrome extension only tracks button presses of Enter and Shift on the [ChatGPT](chatgpt.com) website and does not retain any user information.
 
 ### Contact Information
 
