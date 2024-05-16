@@ -1,4 +1,4 @@
-Element.prototype.findParentByTag = function(tagName) {
+Element.prototype.getFirstParentByTag = function(tagName) {
     let parent = this.parentNode
     
     while (parent !== null) {
@@ -10,19 +10,27 @@ Element.prototype.findParentByTag = function(tagName) {
     return null
 }
 
+Element.prototype.getLastChildButton = function() {
+    for (let prop of Reflect.ownKeys(this).reverse()) {
+		console.log(prop)
+		if(this[prop].tagName.toLowerCase() === 'button'){
+			return this[prop]
+		}
+	}
+    return undefined
+}
+
 document.addEventListener("keydown", function(event) {
 	if (event.key === "Enter" && !event.shiftKey) {
-		let activeElement = document.activeElement
-
 		try{
+			let activeElement = document.activeElement
 			if(activeElement !== null && activeElement.tagName.toLowerCase() === 'textarea' && activeElement.id === 'prompt-textarea'){
-				let form = activeElement.findParentByTag('form')
-				let svg = form.querySelector('.icon-2xl')
-				let sendButton = svg.findParentByTag('button')
+				let form = activeElement.getFirstParentByTag('form')
+				let button = form.getLastChildButton()
 
-				if(!sendButton.disabled){
+				if(button !== undefined){
 					event.preventDefault()
-					sendButton.click()
+					button.click()
 				}
 			}
 		} catch(error) {}
